@@ -1,0 +1,197 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #E8E5F5;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 配置面板 */
+.config-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.config-panel.show {
+  display: flex;
+}
+
+.config-content {
+  width: 85%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.config-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.config-item {
+  margin-bottom: 20px;
+}
+
+.config-label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.config-input {
+  width: 100%;
+  height: 44px;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.config-textarea {
+  width: 100%;
+  min-height: 120px;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+.config-tip {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin-top: 6px;
+}
+
+.config-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.config-btn {
+  flex: 1;
+  height: 44px;
+  border-radius: 22px;
+  font-size: 16px;
+  line-height: 25px; /* 保持垂直居中 */
+  border: none;
+  display: flex;
+  align-items: flex-end; /* 文字靠下对齐 */
+  justify-content: center;
+  padding-bottom: 8px; /* 底部留一些间距 */
+  box-sizing: border-box;
+}
+
+.cancel-btn {
+  background-color: #F0F0F0;
+  color: #666;
+}
+
+.confirm-btn {
+  background-color: #95EC69;
+  color: #333;
+}
+
+/* 设置按钮 */
+.setting-btn {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.setting-icon {
+  font-size: 24px;
+}
+
+/* 气泡样式 */
+.bubble-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.bubble-wrapper {
+  position: absolute;
+  z-index: 10;
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.bubble-shadow {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  background-color: rgba(184, 184, 184, 0.3);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.bubble {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  z-index: 2;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.bubble-text {
+  text-align: center;
+  word-break: break-all;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bubble-enter {
+  animation: bubbleEnter 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes bubbleEnter {
+  0% {
+    transform: scale(0.5) translateY(10px);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,67 @@
+<view class="container">
+  <!-- 配置面板 -->
+  <view class="config-panel {{showConfig ? 'show' : ''}}">
+    <view class="config-content">
+      <view class="config-title">个性化设置</view>
+      
+      <!-- 名字输入 -->
+      <view class="config-item">
+        <text class="config-label">名字(可选):</text>
+        <input 
+          class="config-input" 
+          placeholder="输入你的名字" 
+          value="{{customName}}"
+          bindinput="onNameInput"
+        />
+        <text class="config-tip">留空则不添加名字</text>
+      </view>
+
+      <!-- 自定义文案 -->
+      <!-- <view class="config-item">
+        <text class="config-label">自定义文案(可选):</text>
+        <textarea 
+          class="config-textarea" 
+          placeholder="每行一条文案,留空使用默认文案"
+          value="{{customTexts}}"
+          bindinput="onTextsInput"
+          maxlength="-1"
+        />
+        <text class="config-tip">每行一条,会自动添加名字</text>
+      </view> -->
+
+      <!-- 按钮组 -->
+      <view class="config-buttons">
+        <button class="config-btn cancel-btn" bindtap="closeConfig">取消</button>
+        <button class="config-btn confirm-btn" bindtap="confirmConfig">确定</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 设置按钮 -->
+  <view class="setting-btn" bindtap="openConfig">
+    <text class="setting-icon">⚙️</text>
+  </view>
+
+  <!-- 气泡容器 -->
+  <view class="bubble-container">
+    <view 
+      wx:for="{{bubbles}}" 
+      wx:key="id"
+      class="bubble-wrapper {{item.isAnimating ? 'bubble-enter' : ''}}"
+      style="left: {{item.x}}px; top: {{item.y}}px;"
+    >
+      <!-- 阴影 -->
+      <view 
+        class="bubble-shadow" 
+        style="width: {{item.width}}px; height: {{item.height}}px;"
+      ></view>
+      <!-- 主气泡 -->
+      <view 
+        class="bubble" 
+        style="width: {{item.width}}px; height: {{item.height}}px; background-color: {{item.color}};"
+      >
+        <text class="bubble-text" style="font-size: {{item.fontSize}}px; color: #333;">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+</view>

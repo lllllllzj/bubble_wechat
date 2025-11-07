@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#E8E5F5",
+    "navigationBarTitleText": "一份神秘的礼物",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#E8E5F5"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
